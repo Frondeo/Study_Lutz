@@ -1,4 +1,4 @@
-class Emploee:
+class Employee:
     def __init__(self, name, salary, bonus):
         self.name = name
         self.salary = salary
@@ -12,19 +12,27 @@ class Emploee:
                 f'Total bonus is {self.cal_total_bonus()} rub.')
 
 
-class Cleaner(Emploee):
+def calc_bonuses(employees: list[Employee]):  # polimorph
+    for employee in employees:
+        print(f'Calc bonuses for {employee.name} it is {employee.cal_total_bonus()}')
+
+
+class Cleaner(Employee):
     def __init__(self, name):
         super().__init__(name, 15000, 1)
 
 
-class Manager(Emploee):
+class Manager(Employee):
     def __init__(self, name):
         super().__init__(name, 45000, 10)
 
 
-class CEO(Emploee):
+class CEO(Employee):
     def __init__(self, name):
         super().__init__(name, 105000, 100)
+
+    def cal_total_bonus(self):
+        return self.salary // 100 * self.bonus * 2
 
 
 if __name__ == '__main__':
@@ -34,5 +42,6 @@ if __name__ == '__main__':
     print(masha)
     print(igor)
     print(director)
+    a_list = [masha, igor, director]
+    calc_bonuses(a_list)
 
-# to be continue...
