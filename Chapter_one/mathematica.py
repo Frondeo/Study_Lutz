@@ -8,7 +8,8 @@ class Mathematica:
         return self.perimeter ** 2
 
     def __str__(self):
-        return (f'{self.__class__.__name__} {self.name}, is perimeter {self.perimeter} and area {self.calculate_area()}')
+        return (
+            f'{self.__class__.__name__} {self.name}, is perimeter {self.perimeter} and area {self.calculate_area()}')
 
 
 class Figure(Mathematica):

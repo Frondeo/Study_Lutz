@@ -44,4 +44,3 @@ if __name__ == '__main__':
     print(director)
     a_list = [masha, igor, director]
     calc_bonuses(a_list)
-

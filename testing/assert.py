@@ -25,6 +25,7 @@ def password_str(value: str) -> str:
     #          any(e in lowers for e in value) and (e in uppers for e in value)):
     # return 'Good!'
 
+
 if __name__ == '__main__':
     assert password_str('') == ('Too Weak!')
     assert password_str('1234567') == ('Too Weak!')
