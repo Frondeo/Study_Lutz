@@ -7,16 +7,15 @@ def calculator(expression):
             try:
                 left, right = expression.split(sign)
                 left, right = int(left), int(right)
-                if sign == '+':
-                    return left + right
-                elif sign == '-':
-                    return left - right
-                elif sign == '*':
-                    return left * right
-                elif sign == '/':
-                    return left / right
+                return {
+                    '+': lambda a, b: a + b,
+                    '-': lambda a, b: a - b,
+                    '*': lambda a, b: a * b,
+                    '/': lambda a, b: a / b,
+                }[sign](left, right)
+
             except (ValueError, TypeError):
-                raise ValueError ('Выражение должно содержать два целых числа и один знак.')
+                raise ValueError('Выражение должно содержать два целых числа и один знак.')
 
 
 if __name__ == '__main__':
